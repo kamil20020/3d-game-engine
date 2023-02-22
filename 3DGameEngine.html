@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <div id="game">
+      <canvas id="gameCanvas"></canvas>
+      <input type="file" onchange="Mesh.loadFromObjectFile(this)" style="display: none;"/>
+    </div>
+    <script>
+      var canvas = document.getElementById('gameCanvas')
+	  var context = canvas.getContext('2d')
+      canvas.width = document.body.clientWidth
+      canvas.height = document.body.clientHeight
+      canvas.focus()
+
+      window.onload = function() {
+        const game = new Game()
+        game.run()
+      }
+    </script>
+    <script src='Game.js'></script>
+    <script src="Graphics.js"></script>
+    <script src="BlenderGraphics.js"></script>
+  </body>
+</html>
